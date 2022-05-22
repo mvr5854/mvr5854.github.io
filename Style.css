@@ -1,0 +1,159 @@
+body {
+  font-family: Georgia, serif;
+  font-size: 100%;
+  line-height: 175%;
+  background: #ebebeb;
+  margin: 0;
+  text-align: center;
+}
+header {
+    background-color: white;
+    line-height: 0;
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 15px;
+}
+footer {
+    background-color: white;
+    text-align: center;
+    color: midnightblue;
+    margin: 0;
+    margin-top: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+h1 {
+  font: bold  Georgia, serif;
+  text-shadow: .1em .1em .2em gray;
+  color: midnightblue;
+} 
+#viewport {
+    border: 2px solid red;
+}
+table {
+    width: 600px;
+    height: 100px;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+td {
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: top;
+    background-color: #FFFFC0;
+}
+th {
+    border: 1px solid gray;
+    padding-right: 5px;
+    text-align: right;
+    vertical-align: top;
+}
+main input {
+    border: none;
+    background: transparent;
+}
+aside .keyboard{
+    position: absolute;
+    cursor: move;
+    z-index: 10;
+}
+#airId, #type, #planId {
+    width: 81px;
+    height: 12px;
+}
+#squawk, #pTime, #altd {
+    width: 63px;
+    height: 12px;
+}
+#airport{
+    width: 90px;
+}
+#route {
+    width: 338px;
+    color: red;
+}
+#run, #pause, #restart, #multiplier {
+    width: 65px;
+}
+#time {
+    resize: none;
+    width: 50px;
+    height: 18px;
+    text-align: center;
+    border: 1px solid black;
+}
+#flightInfo input {
+    resize: none;
+    font-family:"Lucida Console",Monoco,monospace;
+    font-size:12px;
+    width: 200px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+#flightInfo {
+    width: 200px;
+    padding: 3px;
+    padding-top: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    background: #FFEFCB;
+}
+#clickStrip {
+    margin: auto;
+    margin-top: 5px;
+    border: 1px solid black;
+    background: #FFEFCB;
+    width: 200px;
+}
+#getStrip {
+    width: 150px;
+}
+
+#cmd {
+    width: 195px;
+    height: 20px;
+}
+.keyboard #closeKb {
+    margin-left: 450px;
+    height: 25px;
+    background-color: red;
+}
+@media screen and (min-width: 815px) {
+  #layout {
+         display: grid;
+         grid-template-rows: 65px 1fr;
+         grid-template-columns: auto 600px auto 208px auto;
+        }
+        header {
+         grid-area: 1 / 1 / 2 / -1;
+        }
+        main {
+         grid-area: 2 / 2 / 3 / 3;
+        }
+        aside {
+         grid-area: 2 / 4 / 3 / 5;
+        }
+
+
+}@media screen and (max-width: 814px) {
+  #layout {
+         display: grid;
+         grid-template-rows: 65px 1fr 450px;
+         grid-template-columns: auto 600px auto;
+        }
+        header {
+         grid-area: 1 / 1 / 2 / -1;
+        }
+        main {
+         grid-area: 2 / 2 / 3 / 3;
+        }
+        aside {
+         grid-area: 3 / 2 / 4 / 3;
+         display: grid;
+         grid-template-columns: 300px 300px ;
+        }
+}

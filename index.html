@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SimFast ATC</title>
+    <style>
+        @import url("Style.css");
+        @import url("Keyboard.css");
+    </style>
+    <script type="text/javascript">
+      function insertText(text)
+      {
+        var elem = document.getElementById("cmd").value;
+        elem += text;
+        document.getElementById("cmd").value = elem;
+      }
+    function eraseText() {
+        document.getElementById("cmd").value = "";
+    }
+    function onPressBackspace() {
+        cmd.value = cmd.value.substring(0, cmd.value.length - 1);
+    }
+    </script>
+</head>
+<body>
+<div id="layout">
+    <header>
+        <h1>SimFast ATC Training Site</h1>
+    </header>
+
+    <main>
+        <canvas id="viewport" width="600" height="600" style="background: url('https://i.pinimg.com/originals/6a/ee/04/6aee0440271527a35991c368aafbb7da.jpg')"></canvas>
+        <table id="table" style="display: none">
+            <tr><th colspan="4" id="close"><button>X</button></th></tr>
+            <tr>
+                <td rowspan="3">
+                    <div id="container">
+                        <input id="airId" readonly><br><input id="type" readonly><br><input id="planId" readonly>
+                    </div>
+                </td>
+                <td><input id="squawk" readonly></td>
+                <td rowspan="3"><input id="airport" readonly></td>
+                <td rowspan="3"><input id="route" readonly></td>
+            </tr>
+            <tr><td><input id="pTime" readonly></td></tr>
+            <tr><td><input id="altd" readonly></td></tr>
+        </table>
+
+    </main>
+
+    <aside>
+        <div class="keyboard" id="keyboard" style="display: none">
+            <button id="closeKb"><b>X</b></button>
+            <div class="row1">
+                <button id="M1" value="M1" onclick="insertText('M1');">M1</button>
+                <button id="M2" value="M2" onclick="insertText('M2');">M2</button>
+                <button id="M3" value="M3" onclick="insertText('M3');">M3</button>
+                <button id="M4" value="M4" onclick="insertText('M4');">M4</button>
+                <button id="CON" value="CON" onclick="insertText('CON');">CON</button>
+                <button id="MAP" value="MAP" onclick="insertText('MAP');">MAP</button>
+                <button id="M5" value="M5" onclick="insertText('M5');">M5</button>
+                <button id="M6" value="M6" onclick="insertText('M6');">M6</button>
+                <button id="M7" value="M7" onclick="insertText('M7');">M7</button>
+                <button id="M8" value="M8" onclick="insertText('M8');">M8</button>
+            </div> <div class="row1">
+            <button id="M9" value="M9" onclick="insertText('M9');">M9</button>
+            <button id="M10" value="M10" onclick="insertText('M10');">M10</button>
+            <button id="M11" value="M11" onclick="insertText('M11');">M11</button>
+            <button id="M12" value="M12" onclick="insertText('M12');">M12</button>
+            <button id="TRK" value="TRK" onclick="insertText('TRK');">TRK</button>
+            <button id="USR" value="USR" onclick="insertText('USR');">USR</button>
+            <button id="M13" value="M13" onclick="insertText('M13');">M13</button>
+            <button id="M14" value="M14" onclick="insertText('M14');">M14</button>
+            <button id="M15" value="M15" onclick="insertText('M15');">M15</button>
+            <button id="M16" value="M16"  onclick="insertText('M16');">M16</button>
+        </div> <div class="row2">
+            <button id="CLEAR" value="CLEAR" onclick="javascript:eraseText();">CLEAR</button>
+            <button id="BACK SPACE" value="BACKS PACE" onclick="javascript:onPressBackspace();">BACK SPACE</button>
+            <button id="SPACE" value=" " onclick="insertText(' ');"><b>SPACE</b></button>
+            <button id="ENTER" value="ENTER"><b>ENTER</b></button>
+        </div> <div class="row1">
+            <button id="INIT CTRL" value="INIT CTRL" onclick="insertText('INIT CTRL');">INIT CTRL</button>
+            <button id="TRK RPOS" value="TRK RPOS" onclick="insertText('TRK RPOS');">TRK RPOS</button>
+            <button id="TRK SUSP" value="TRK SUSP" onclick="insertText('TRK SUSP');">TRK SUSP</button>
+            <button id="TERM CTRL" value="TERM CTRL" onclick="insertText('TERM CTRL');">TERM CTRL</button>
+            <button id="HND OFF" value="HND OFF" onclick="insertText('HND OFF');">HND OFF</button>
+            <button id="FLT DATA" value="FLT DATA" onclick="insertText('FLT DATA');">FLT DATA</button>
+            <button id="MULTI FUNC" value="MULTI FUNC" onclick="insertText('MULTI FUNC');">MULTI FUNC</button>
+            <button id="F8" value="F8" onclick="insertText('F8');">F8</button>
+            <button id="triangle" value="Δ" style="font-size: 32px" onclick="insertText('Δ');">Δ</button>
+            <button id="dot" value="." style="font-size: 32px" onclick="insertText('.');">.</button>
+        </div> <div class="row1">
+            <button id="F9" value="F9" onclick="insertText('F9');">F9</button>
+            <button id="F10" value="F10" onclick="insertText('F10');">F10</button>
+            <button id="CA" value="CA" onclick="insertText('CA');">CA</button>
+            <button id="F12" value="F12" onclick="insertText('F12');">F12</button>
+            <button id="F13" value="F13" onclick="insertText('F13');">F13</button>
+            <button id="F14" value="F14" onclick="insertText('F14');">F14</button>
+            <button id="TGT GEN" value="TGT GEN" onclick="insertText('TGT GEN');">TGT GEN</button>
+            <button id="F16" value="F16" onclick="insertText('F16');">F16</button>
+            <button id="IFR" value="IFR +" onclick="insertText('IFR +');"><b>IFR<br>+</b></button>
+            <button id="VFR" value="VFR/" onclick="insertText('VFR /');"><b>VFR<br>/</b></button>
+        </div> <div class="row3">
+            <button id="A" value="A" onclick="insertText('A');">A</button>
+            <button id="B" value="B" onclick="insertText('B');">B</button>
+            <button id="C" value="C" onclick="insertText('C');">C</button>
+            <button id="D" value="D" onclick="insertText('D');">D</button>
+            <button id="E" value="E" onclick="insertText('E');">E</button>
+            <button id="F" value="F" onclick="insertText('F');">F</button>
+            <button id="G" value="G" onclick="insertText('G');">G</button>
+            <button id="N1" value="1" onclick="insertText('1');">1</button>
+            <button id="N2" value="2" onclick="insertText('2');">2</button>
+            <button id="N3" value="3" onclick="insertText('3');">3</button>
+        </div> <div class="row3">
+            <button id="H" value="H" onclick="insertText('H');">H</button>
+            <button id="I" value="I" onclick="insertText('I');">I</button>
+            <button id="J" value="J" onclick="insertText('J');">J</button>
+            <button id="K" value="K" onclick="insertText('K');">K</button>
+            <button id="L" value="L" onclick="insertText('L');">L</button>
+            <button id="M" value="M" onclick="insertText('M');">M</button>
+            <button id="N" value="N" onclick="insertText('N');">N</button>
+            <button id="N4" value="4" onclick="insertText('4');">4</button>
+            <button id="N5" value="5" onclick="insertText('5');">5</button>
+            <button id="N6" value="6" onclick="insertText('6');">6</button>
+        </div> <div class="row3">
+            <button id="O" value="O" onclick="insertText('O');">O</button>
+            <button id="P" value="P" onclick="insertText('P');">P</button>
+            <button id="Q" value="Q" onclick="insertText('Q');">Q</button>
+            <button id="R" value="R" onclick="insertText('R');">R</button>
+            <button id="S" value="S" onclick="insertText('S');">S</button>
+            <button id="T" value="T" onclick="insertText('T');">T</button>
+            <button id="U" value="U" onclick="insertText('U');">U</button>
+            <button id="N7" value="7" onclick="insertText('7');">7</button>
+            <button id="N8" value="8" onclick="insertText('8');">8</button>
+            <button id="N9" value="9" onclick="insertText('9');">9</button>
+        </div> <div class="row3">
+            <button id="V" value="V" onclick="insertText('V');">V</button>
+            <button id="W" value="W" onclick="insertText('W');">W</button>
+            <button id="X" value="X" onclick="insertText('X');">X</button>
+            <button id="Y" value="Y" onclick="insertText('Y');">Y</button>
+            <button id="Z" value="Z" onclick="insertText('Z');">Z</button>
+            <button id="*" value="*" onclick="insertText('*');">*</button>
+            <button name="_"> </button>
+            <button name="_"></button>
+            <button id="N0" value="0" onclick="insertText('0');">0</button>
+            <button name="_"></button>
+        </div></div>
+        <div id="controller">
+            <select id="multiplier">
+                <option value="1">1x</option>
+                <option value="2">2x</option>
+                <option value="4" selected="selected">4x</option>
+                <option value="10">10x</option>
+                <option value="20">20x</option>
+            </select>
+            <button id="run">Run</button>
+            <button id="pause">Stop</button><br>
+            <input id="time" readonly>
+            <button id="restart">Restart</button>
+            <button id="kb">Keyboard</button><br>
+            <input id="cmd" placeholder="Type your command here"><br>
+                <section id="clickStrip">
+                <select id="getStrip">
+                    <option value="15" selected="selected" style="visibility: hidden;">Get Flight Strip</option>
+                    <option value="0">EJA363</option>
+                    <option value="1">FFT2378</option>
+                    <option value="2">N300GB</option>
+                    <option value="3">AAL2189</option>
+                    <option value="4">FFT108</option>
+                    <option value="5">GPD816</option>
+                    <option value="6">DAL2942</option>
+                    <option value="8">DAL8839</option>
+                    <option value="7">AAL646</option>
+                    <option value="9">JIA5358</option>
+                    <option value="10">SWA893</option>
+                    <option value="11">JIA5548</option>
+                    <option value="12">AAL551</option>
+                    <option value="13">RPA4749</option>
+                    <option value="14">AAL856</option>
+                </select>
+                <button id="go">Go</button>
+                </section>
+        </div>
+
+        <div id="flightInfo">
+            <input type="button" id="info1">
+            <input type="button" id="info2">
+            <input type="button" id="info3">
+            <input type="button" id="info4">
+            <input type="button" id="info5">
+            <input type="button" id="info6">
+            <input type="button" id="info7">
+            <input type="button" id="info8">
+            <input type="button" id="info9">
+            <input type="button" id="info10">
+            <input type="button" id="info11">
+            <input type="button" id="info12">
+            <input type="button" id="info13">
+            <input type="button" id="info14">
+            <input type="button" id="info15">
+        </div>
+
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            window.onload = function(){
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = "Canvas.js";
+                document.getElementsByTagName("head")[0].appendChild(script);
+                return false;
+            }
+        </script>
+
+
+
+        <script>
+            dragElement(document.getElementById("keyboard"));
+
+        function dragElement(elmnt) {
+          var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+          if (document.getElementById(elmnt.id + "header")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+          } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+          }
+
+          function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+          }
+
+          function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+          }
+
+          function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+          }
+        }
+        </script>
+        <script>
+            $(document).ready(function(){
+              var txt=$('#cmd');
+              $("#keyboard").on('click','input',function() {
+                txt.val(txt.val()+this.id);
+              });
+             });
+
+            function eraseText() {
+                document.getElementById("cmd").value = "";
+            }
+            function onPressBackspace() {
+                cmd.value = cmd.value.substring(0, cmd.value.length - 1);
+            }
+            $(document).keydown(function (e) {
+                            var element = e.target.nodeName.toLowerCase();
+                            if ((element != 'input' && element != 'textarea') || $(e.target).attr("readonly") || (e.target.getAttribute("type") ==="checkbox")) {
+                                if (e.keyCode === 8) {
+                                return false;
+                                }
+                            }
+            });
+    </script>
+        <script>
+            var input = document.getElementById("cmd");
+            input.addEventListener("keypress", function(event) {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("ENTER").click();
+              }
+            });
+        </script>
+    </aside>
+</div>
+<footer>
+    <p>This website is for educational purposes only.<br>
+        Website designed and built by Mahfuzur Rahman.<br>
+        <a href="https://www.linkedin.com/in/mahfuzur-rahman-bb8b6822a">Find me on linkedin</a></p>
+</footer>
+</body>
+</html>

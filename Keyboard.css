@@ -1,0 +1,46 @@
+.keyboard{
+text-align: center;
+border: 1px solid black;
+width: 500px;
+height: 480px;
+
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: white;
+}
+.row1, .row2, .row3{
+  display:flex;
+  justify-content: space-around;
+}
+.row1 button{
+  background-color: #00C000;
+}
+.row2 button{
+  background-color: #FFFF00;
+}
+.row3 button{
+  background-color: white;
+}
+#CON, #MAP, #TRK, #USR {
+  background-color: white;
+}
+#N0, #N1, #N2, #N3, #N4, #N5, #N6, #N7, #N8, #N9 {
+  background-color: #80FFFF;
+}
+#dot, #triangle, #IFR, #VFR {
+    background-color: #FFFF00;
+}
+.keyboard button{
+padding: 0;
+font-size: 12px;
+height: 45px;
+width: 45px;
+}
+#SPACE {
+  width: 295px;
+}
+#ENTER {
+ width: 95px;
+ background-color: red;
+}
